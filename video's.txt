@@ -1,0 +1,9 @@
+1 - YouTube               https://www.youtube.com/watch?v=ghZZB_7HFS8
+
+2 - Tailwindcss(основа)   https://tailwindcss.com/docs/installation/play-cdn
+
+3 - Tailblocks(формы)     https://tailblocks.cc/
+
+4 - Unsplash(фотографии)  https://unsplash.com/documentation#get-a-random-photo
+
+5 - Сreative-tim(бесплатные компоненты) https://www.creative-tim.com/twcomponents/
