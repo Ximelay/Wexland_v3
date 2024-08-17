@@ -1,22 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Document</title>
-	<script src="https://cdn.tailwindcss.com"></script>
-	<script src="/Wexland_v3//sections//header//loadheder.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lore Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-	<div id="header-container"></div>
+  <div id="header-container"></div>
+
   <!-- Контент страницы -->
-<div class="container mx-auto py-6">
-  <h1 id="pageTitle" class="text-2xl font-bold">Лор персонажа</h1>
-  <p id="pageContent">Здесь вы найдете лор своего персонажа</p>
-</div>
+  <div class="container mx-auto py-6">
+    <h1 id="pageTitle" class="text-2xl font-bold">Лор персонажа</h1>
+    <p id="pageContent">Здесь вы найдете лор своего персонажа</p>
+  </div>
 
+  <!-- Сценарии перевода и загрузки хедера -->
+  <script src="/Wexland_v3/sections/header/lang.js"></script>
+  <script src="/Wexland_v3/sections/header/contacts.js"></script>
+  <script src="/Wexland_v3/sections/header/autoloader.js"></script>
 
-	<!-- Скрипты, которые зависят от загруженного header.html -->
+  <script>
+    // Уникальные переводы для этой страницы
+    const translations_lorePage = {
+      en: {
+        pageTitle: 'Lore Section',
+        pageContent: "Here you will find your character's lore."
+      },
+      ru: {
+        pageTitle: 'Лор персонажа',
+        pageContent: 'Здесь вы найдете лор своего персонажа.'
+      }
+    };
 
+    // Элементы, которые нужно перевести на этой странице
+    const pageSpecificElementsToTranslate = {
+      pageTitle: document.getElementById('pageTitle'),
+      pageContent: document.getElementById('pageContent'),
+    };
+
+    // Применение уникального перевода для этой страницы
+    function applyPageSpecificTranslations(language) {
+      if (translations_lorePage[language]) {
+        Object.keys(pageSpecificElementsToTranslate).forEach(key => {
+          if (pageSpecificElementsToTranslate[key]) {
+            pageSpecificElementsToTranslate[key].textContent =
+              translations_lorePage[language][key];
+          }
+        });
+      }
+    }
+  </script>
 </body>
 </html>
