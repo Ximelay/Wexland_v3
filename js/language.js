@@ -26,7 +26,7 @@ const translations = {
 		dev: 'About the Developers',
 		npc: 'NPCs',
 		faq: 'FAQ',
-		sign: 'Sign In',
+		sign: 'Sign Up',
 	},
 	ru: {
 		news: 'Новости',
@@ -53,11 +53,11 @@ const translations = {
 		dev: 'О разработчиках проекта',
 		npc: 'НПС',
 		faq: 'FAQ',
-		sign: 'Вход',
+		sign: 'Регистрация',
 	},
 }
 
-// Элементы, которые нужно перевести
+// Элементы, которые нужно перевести (для общих страниц)
 const elementsToTranslate = {
 	news: document.getElementById('news'),
 	rules: document.getElementById('rules'),
@@ -86,21 +86,31 @@ const elementsToTranslate = {
 }
 
 // Применение перевода на основе выбранного языка
-function applyLanguage(language) {
-	if (translations[language]) {
-		Object.keys(elementsToTranslate).forEach(key => {
-			if (elementsToTranslate[key]) {
-				elementsToTranslate[key].textContent = translations[language][key]
-			}
-		})
-	}
+function applyGeneralLanguage(language) {
+  if (translations[language]) {
+    Object.keys(elementsToTranslate).forEach(key => {
+      if (elementsToTranslate[key]) {
+        elementsToTranslate[key].textContent = translations[language][key];
+      }
+    });
+  }
 }
 
 // Применяем сохраненный язык при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
-	const savedLanguage = localStorage.getItem('language') || 'ru' // По умолчанию русский
-	applyLanguage(savedLanguage)
-})
+  const savedLanguage = localStorage.getItem('language') || 'ru'; // По умолчанию русский
+  applyGeneralLanguage(savedLanguage);
+});
+
+// Обработка выбора языка и сохранение его в localStorage
+document.querySelectorAll('#languageDropdown a').forEach(link => {
+  link.addEventListener('click', function (event) {
+    event.preventDefault(); // Предотвращаем переход по ссылке
+    var selectedLanguage = link.getAttribute('data-lang');
+    localStorage.setItem('language', selectedLanguage); // Сохраняем выбранный язык
+    applyGeneralLanguage(selectedLanguage); // Применяем перевод для общих элементов
+  });
+});
 
 // Toggle language dropdown
 document
@@ -109,16 +119,6 @@ document
 		var dropdown = document.getElementById('languageDropdown')
 		dropdown.classList.toggle('hidden')
 	})
-
-// Обработка выбора языка и сохранение его в localStorage
-document.querySelectorAll('#languageDropdown a').forEach(link => {
-	link.addEventListener('click', function (event) {
-		event.preventDefault() // Предотвращаем переход по ссылке
-		var selectedLanguage = link.getAttribute('data-lang')
-		localStorage.setItem('language', selectedLanguage) // Сохраняем выбранный язык
-		applyLanguage(selectedLanguage) // Применяем перевод
-	})
-})
 
 // Закрытие выпадающих меню при клике вне их
 document.addEventListener('click', function (event) {

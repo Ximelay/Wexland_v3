@@ -1,6 +1,6 @@
 // loadheder.js
 document.addEventListener('DOMContentLoaded', function () {
-	fetch('/sections/header/header.html')
+	fetch('/Wexland_v3/sections/header/header.html')
 		.then(response => response.text())
 		.then(data => {
 			document.getElementById('header-container').innerHTML = data
