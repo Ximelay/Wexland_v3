@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Новости</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -48,9 +48,50 @@
   </div>
 </header>
 
+<!-- Контент страницы -->
+<div class="container mx-auto py-6">
+  <h1 id="pageTitle" class="text-2xl font-bold">Правила</h1>
+  <p id="pageContent">Здесь вы найдете правила нашего сервера</p>
+</div>
 
 <script src="/Wexland_v3/js/language.js"></script>
-<script src="/Wexland_v3/js/buttonContact.js"></script>
 
+<script>
+  // Уникальные переводы только для страницы news.html
+  const translations_rules = {
+    en: {
+      pageTitle: "Rules",
+      pageContent: "Here you will find the rules of our server",
+    },
+    ru: {
+      pageTitle: "Правила",
+      pageContent: "Здесь вы найдете правила нашего сервера",
+    },
+  };
+
+  // Функция для применения перевода для уникальных элементов
+  function applyNewsLanguage(language) {
+    document.getElementById('pageTitle').textContent = translations_rules[language].pageTitle;
+    document.getElementById('pageContent').textContent = translations_rules[language].pageContent;
+  }
+
+  // Применение сохраненного языка при загрузке страницы
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLanguage = localStorage.getItem('language') || 'ru';
+    applyNewsLanguage(savedLanguage);
+  });
+
+  // Обработка кликов на выбор языка
+  document.querySelectorAll('#languageDropdown a').forEach(link => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      const selectedLanguage = link.getAttribute('data-lang');
+      localStorage.setItem('language', selectedLanguage);
+      applyNewsLanguage(selectedLanguage); // Применяем перевод для уникальных элементов
+    });
+  });
+</script>
+
+<script src="/Wexland_v3/js/buttonContact.js"></script>
 </body>
 </html>

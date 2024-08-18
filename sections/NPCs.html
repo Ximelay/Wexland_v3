@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body>
+		<div id="header-container"></div>
+
+		<!-- Контент страницы -->
+		<div class="container mx-auto py-6">
+			<h1 id="pageTitle" class="text-2xl font-bold">Информация об НПС</h1>
+			<p id="pageContent">Здесь вы найдете информацию о НПС</p>
+		</div>
+
+		<!-- Сценарии перевода и загрузки хедера -->
+		<script src="/Wexland_v3/sections/header/lang.js"></script>
+		<script src="/Wexland_v3/sections/header/contacts.js"></script>
+		<script src="/Wexland_v3/sections/header/autoloader.js"></script>
+
+     <script>
+    // Уникальные переводы для этой страницы
+    const translations_NPC = {
+      en: {
+        pageTitle: 'NPC Information',
+        pageContent: "Here you will find information about NPCs"
+      },
+      ru: {
+        pageTitle: 'Информация об НПС',
+        pageContent: 'Здесь вы найдете информацию о НПС'
+      }
+    };
+
+    // Элементы, которые нужно перевести на этой странице
+    const pageSpecificElementsToTranslate = {
+      pageTitle: document.getElementById('pageTitle'),
+      pageContent: document.getElementById('pageContent'),
+    };
+
+    // Применение уникального перевода для этой страницы
+    function applyPageSpecificTranslations(language) {
+      if (translations_NPC[language]) {
+        Object.keys(pageSpecificElementsToTranslate).forEach(key => {
+          if (pageSpecificElementsToTranslate[key]) {
+            pageSpecificElementsToTranslate[key].textContent =
+              translations_NPC[language][key];
+          }
+        });
+      }
+    }
+  </script>
+	</body>
+</html>

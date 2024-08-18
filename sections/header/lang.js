@@ -11,7 +11,7 @@ const translations_common = {
 		rus: 'Russian',
 		eng: 'English',
 		contactsButton: 'Contacts',
-		sign: 'Sign In',
+		sign: 'Sign Un',
 	},
 	ru: {
 		news: 'Новости',
@@ -22,7 +22,7 @@ const translations_common = {
 		rus: 'Русский',
 		eng: 'Английский',
 		contactsButton: 'Контакты',
-		sign: 'Вход',
+		sign: 'Регистрация',
 	},
 }
 
