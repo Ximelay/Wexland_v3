@@ -1,97 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Новости</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-  <!-- header.html -->
-<header class="text-gray-600 body-font">
-  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <a href="/Wexland_v3/index.html" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-      </svg>
-      <span class="ml-3 text-xl">Awexland</span>
-    </a>
-    <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
-      <a id="news" href="/Wexland_v3/headersEl/news.html" class="mr-5 hover:text-gray-900">Новости</a>
-      <a id="rules" href="/Wexland_v3/headersEl/rules.html" class="mr-5 hover:text-gray-900">Правила</a>      
-      <a id="worldMap" href="/Wexland_v3/headersEl/worldMap.html" class="mr-5 hover:text-gray-900">Карта мира</a>
-      <a id="ides" href="/Wexland_v3/headersEl/ide's.html" class="mr-5 hover:text-gray-900">Предложения и идеи</a>
-    </nav>
-    <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center relative">
-      <!-- Dropdown language -->
-      <div class="relative">
-        <button id="languageButton" class="mr-5 hover:text-gray-900">Язык</button>
-        <div id="languageDropdown" class="absolute hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow mt-2">
-          <a href="#" id="rus" class="text-sm text-gray-700 block px-4 py-2 hover:bg-gray-100" data-lang="ru">Русский</a>
-          <a href="#" id="eng" class="text-sm text-gray-700 block px-4 py-2 hover:bg-gray-100" data-lang="en">Английский</a>
-        </div>
-      </div>
-      <!-- Dropdown contacts -->
-      <div class="relative">
-          <button id="contactsButton" class="mr-5 hover:text-gray-900">Контакты</button>
-          <div id="contactsDropdown" class="absolute hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow mt-2">
-          <a href="#" class="text-sm text-gray-700 block px-4 py-2 hover:bg-gray-100">Discord</a>
-          <a href="#" class="text-sm text-gray-700 block px-4 py-2 hover:bg-gray-100">Telegram</a>
-          </div>
-      </div>
-    </nav>
-    <button id="sign" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Регистрация
-      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-        <path d="M5 12h14M12 5l7 7-7 7"></path>
-      </svg>
-    </button>
-  </div>
-</header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Новости</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body>
+		<!-- header.html -->
+		<header class="text-gray-600 body-font">
+			<div
+				class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+			>
+				<a
+					href="/Wexland_v3/index.html"
+					class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+						viewBox="0 0 24 24"
+					>
+						<path
+							d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+						></path>
+					</svg>
+					<span class="ml-3 text-xl">Awexland</span>
+				</a>
+				<nav
+					class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center"
+				>
+					<a
+						id="news"
+						href="/Wexland_v3/headersEl/news.html"
+						class="mr-5 hover:text-gray-900"
+						>Новости</a
+					>
+					<a
+						id="rules"
+						href="/Wexland_v3/headersEl/rules.html"
+						class="mr-5 hover:text-gray-900"
+						>Правила</a
+					>
+					<a
+						id="worldMap"
+						href="/Wexland_v3/headersEl/worldMap.html"
+						class="mr-5 hover:text-gray-900"
+						>Карта мира</a
+					>
+					<a
+						id="ides"
+						href="/Wexland_v3/headersEl/ide's.html"
+						class="mr-5 hover:text-gray-900"
+						>Предложения и идеи</a
+					>
+				</nav>
+				<nav
+					class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center relative"
+				>
+					<!-- Dropdown language -->
+					<div class="relative">
+						<button id="languageButton" class="mr-5 hover:text-gray-900">
+							Язык
+						</button>
+						<div
+							id="languageDropdown"
+							class="absolute hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow mt-2"
+						>
+							<a
+								href="#"
+								id="rus"
+								class="text-sm text-gray-700 block px-4 py-2 hover:bg-gray-100"
+								data-lang="ru"
+								>Русский</a
+							>
+							<a
+								href="#"
+								id="eng"
+								class="text-sm text-gray-700 block px-4 py-2 hover:bg-gray-100"
+								data-lang="en"
+								>Английский</a
+							>
+						</div>
+					</div>
+					<!-- Dropdown contacts -->
+					<div class="relative">
+						<button id="contactsButton" class="mr-5 hover:text-gray-900">
+							Контакты
+						</button>
+						<div
+							id="contactsDropdown"
+							class="absolute hidden bg-white text-base z-10 list-none divide-y divide-gray-100 rounded shadow mt-2"
+						>
+							<a
+								href="https://discord.gg/CM4mJZcasH"
+								class="text-sm text-gray-700 block px-4 py-2 hover:bg-gray-100"
+								target="_blank"
+								rel="noopener noreferrer"
+								>Discord</a
+							>
+							<a
+								href="#"
+								class="text-sm text-gray-700 block px-4 py-2 hover:bg-gray-100"
+								target="_blank"
+								rel="noopener noreferrer"
+								>Telegram</a
+							>
+						</div>
+					</div>
+				</nav>
+				<button
+					id="sign"
+					class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
+				>
+					Регистрация
+					<svg
+						fill="none"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						class="w-4 h-4 ml-1"
+						viewBox="0 0 24 24"
+					>
+						<path d="M5 12h14M12 5l7 7-7 7"></path>
+					</svg>
+				</button>
+			</div>
+		</header>
 
-<!-- Контент страницы -->
-<div class="container mx-auto py-6">
-  <h1 id="pageTitle" class="text-2xl font-bold">Карта мира</h1>
-  <p id="pageContent">Здесь вы найдете карту нашего сервера</p>
-</div>
+		<!-- Контент страницы -->
+		<div class="container mx-auto py-6">
+			<h1 id="pageTitle" class="text-2xl font-bold">Карта мира</h1>
+			<p id="pageContent">Здесь вы найдете карту нашего сервера</p>
+		</div>
 
-<script src="/Wexland_v3/js/language.js"></script>
+		<script src="/Wexland_v3/js/language.js"></script>
 
-<script>
-  // Уникальные переводы только для страницы news.html
-  const translations_map = {
-    en: {
-      pageTitle: "World map",
-      pageContent: "Here you will find a map of our server",
-    },
-    ru: {
-      pageTitle: "Карта мира",
-      pageContent: "Здесь вы найдете карту нашего сервера",
-    },
-  };
+		<script>
+			// Уникальные переводы только для страницы news.html
+			const translations_map = {
+				en: {
+					pageTitle: 'World map',
+					pageContent: 'Here you will find a map of our server',
+				},
+				ru: {
+					pageTitle: 'Карта мира',
+					pageContent: 'Здесь вы найдете карту нашего сервера',
+				},
+			}
 
-  // Функция для применения перевода для уникальных элементов
-  function applyNewsLanguage(language) {
-    document.getElementById('pageTitle').textContent = translations_map[language].pageTitle;
-    document.getElementById('pageContent').textContent = translations_map[language].pageContent;
-  }
+			// Функция для применения перевода для уникальных элементов
+			function applyNewsLanguage(language) {
+				document.getElementById('pageTitle').textContent =
+					translations_map[language].pageTitle
+				document.getElementById('pageContent').textContent =
+					translations_map[language].pageContent
+			}
 
-  // Применение сохраненного языка при загрузке страницы
-  document.addEventListener('DOMContentLoaded', () => {
-    const savedLanguage = localStorage.getItem('language') || 'ru';
-    applyNewsLanguage(savedLanguage);
-  });
+			// Применение сохраненного языка при загрузке страницы
+			document.addEventListener('DOMContentLoaded', () => {
+				const savedLanguage = localStorage.getItem('language') || 'ru'
+				applyNewsLanguage(savedLanguage)
+			})
 
-  // Обработка кликов на выбор языка
-  document.querySelectorAll('#languageDropdown a').forEach(link => {
-    link.addEventListener('click', function (event) {
-      event.preventDefault();
-      const selectedLanguage = link.getAttribute('data-lang');
-      localStorage.setItem('language', selectedLanguage);
-      applyNewsLanguage(selectedLanguage); // Применяем перевод для уникальных элементов
-    });
-  });
-</script>
+			// Обработка кликов на выбор языка
+			document.querySelectorAll('#languageDropdown a').forEach(link => {
+				link.addEventListener('click', function (event) {
+					event.preventDefault()
+					const selectedLanguage = link.getAttribute('data-lang')
+					localStorage.setItem('language', selectedLanguage)
+					applyNewsLanguage(selectedLanguage) // Применяем перевод для уникальных элементов
+					// Закрываем выпадающее меню после выбора языка
+					var dropdown = document.getElementById('languageDropdown')
+					dropdown.classList.add('hidden')
+				})
+			})
+		</script>
 
-<script src="/Wexland_v3/js/buttonContact.js"></script>
-</body>
+		<script src="/Wexland_v3/js/buttonContact.js"></script>
+	</body>
 </html>

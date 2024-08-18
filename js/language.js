@@ -65,7 +65,7 @@ const elementsToTranslate = {
 	ides: document.getElementById('ides'),
 	languageButton: document.getElementById('languageButton'),
 	rus: document.getElementById('rus'),
-  eng: document.getElementById('eng'),
+	eng: document.getElementById('eng'),
 	contactsButton: document.getElementById('contactsButton'),
 	osnova_z: document.getElementById('osnova_z'),
 	osnova: document.getElementById('osnova'),
@@ -109,29 +109,33 @@ document.querySelectorAll('#languageDropdown a').forEach(link => {
     var selectedLanguage = link.getAttribute('data-lang');
     localStorage.setItem('language', selectedLanguage); // Сохраняем выбранный язык
     applyGeneralLanguage(selectedLanguage); // Применяем перевод для общих элементов
+
+    // Закрываем выпадающее меню после выбора языка
+    var dropdown = document.getElementById('languageDropdown');
+    dropdown.classList.add('hidden');
   });
 });
 
 // Toggle language dropdown
 document
-	.getElementById('languageButton')
-	.addEventListener('click', function () {
-		var dropdown = document.getElementById('languageDropdown')
-		dropdown.classList.toggle('hidden')
-	})
+    .getElementById('languageButton')
+    .addEventListener('click', function () {
+        var dropdown = document.getElementById('languageDropdown')
+        dropdown.classList.toggle('hidden')
+    })
 
 // Закрытие выпадающих меню при клике вне их
 document.addEventListener('click', function (event) {
-	var languageDropdown = document.getElementById('languageDropdown')
-	var languageButton = document.getElementById('languageButton')
+    var languageDropdown = document.getElementById('languageDropdown')
+    var languageButton = document.getElementById('languageButton')
 
-	if (!languageButton.contains(event.target) && !languageDropdown.contains(event.target)) {
-		languageDropdown.classList.add('hidden')
-	}
+    if (!languageButton.contains(event.target) && !languageDropdown.contains(event.target)) {
+        languageDropdown.classList.add('hidden')
+    }
 })
 
 // Закрытие выпадающих меню при прокрутке
 window.addEventListener('scroll', function () {
-	var languageDropdown = document.getElementById('languageDropdown')
-	languageDropdown.classList.add('hidden')
+    var languageDropdown = document.getElementById('languageDropdown')
+    languageDropdown.classList.add('hidden')
 })
