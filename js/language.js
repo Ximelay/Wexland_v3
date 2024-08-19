@@ -26,7 +26,7 @@ const translations = {
 		dev: 'About the Developers',
 		npc: 'NPCs',
 		faq: 'FAQ',
-		sign: 'Sign Up',
+		sign: 'Personal account',
 	},
 	ru: {
 		news: 'Новости',
@@ -53,7 +53,7 @@ const translations = {
 		dev: 'О разработчиках проекта',
 		npc: 'НПС',
 		faq: 'FAQ',
-		sign: 'Регистрация',
+		sign: 'Личный кабинет',
 	},
 }
 
