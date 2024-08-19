@@ -1,0 +1,7 @@
+/* Скрытие модального окна по умолчанию */
+#modal {
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(0.9);
+	transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
