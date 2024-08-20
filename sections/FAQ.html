@@ -11,8 +11,12 @@
 
 		<!-- Контент страницы -->
 		<div class="container mx-auto py-6">
-			<h1 id="pageTitle" class="text-2xl font-bold">Часто задаваемые вопросы</h1>
-			<p id="pageContent">Здесь вы найдете ответы на частые вопросы пользователей</p>
+			<h1 id="pageTitle" class="text-2xl font-bold">
+				Часто задаваемые вопросы
+			</h1>
+			<p id="pageContent">
+				Здесь вы найдете ответы на частые вопросы пользователей
+			</p>
 		</div>
 
 		<!-- Сценарии перевода и загрузки хедера -->
@@ -20,36 +24,253 @@
 		<script src="/Wexland_v3/sections/header/contacts.js"></script>
 		<script src="/Wexland_v3/sections/header/autoloader.js"></script>
 
-     <script>
-    // Уникальные переводы для этой страницы
-    const translations_faq = {
-      en: {
-        pageTitle: 'Frequently Asked Questions',
-        pageContent: "Here you will find answers to frequently asked questions from users"
-      },
-      ru: {
-        pageTitle: 'Часто задаваемые вопросы',
-        pageContent: 'Здесь вы найдете ответы на частые вопросы пользователей'
-      }
-    };
+<input type="text" id="searchInput" placeholder="Поиск..." class="border p-2 mb-4 float-right mr-12" onkeypress="handleKeyPress(event)">
+<button onclick="searchFAQ()" class="bg-purple-500 text-white p-2 rounded float-right mr-3">Поиск</button>
+<a href="#" onclick="resetSearch()" class="text-sm text-blue-600 float-right mr-4 mt-2">Назад</a>
 
-    // Элементы, которые нужно перевести на этой странице
-    const pageSpecificElementsToTranslate = {
-      pageTitle: document.getElementById('pageTitle'),
-      pageContent: document.getElementById('pageContent'),
-    };
+		<!-- component -->
+		<div class="p-8">
+			<div class="bg-white p-4 rounded-lg shadow-xl py-8 mt-12">
 
-    // Применение уникального перевода для этой страницы
-    function applyPageSpecificTranslations(language) {
-      if (translations_faq[language]) {
-        Object.keys(pageSpecificElementsToTranslate).forEach(key => {
-          if (pageSpecificElementsToTranslate[key]) {
-            pageSpecificElementsToTranslate[key].textContent =
-              translations_faq[language][key];
-          }
+				<div class="space-y-12 px-2 xl:px-16 mt-12">
+					<div class="mt-4 flex">
+						<div>
+							<div class="flex items-center h-16 border-l-4 border-blue-600">
+								<span class="text-4xl text-blue-600 px-4">Q.</span>
+							</div>
+							<div class="flex items-center h-16 border-l-4 border-gray-400">
+								<span class="text-4xl text-gray-400 px-4">A.</span>
+							</div>
+						</div>
+						<div>
+							<div class="flex items-center h-16">
+								<span class="text-lg text-blue-600 font-bold"
+									>Lorem ipsum dolor sit amet?</span
+								>
+							</div>
+							<div class="flex items-center py-2">
+								<span class="text-gray-500"
+									>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Quae, dignissimos. Neque eos, dignissimos provident reiciendis
+									debitis repudiandae commodi perferendis et itaque, similique
+									fugiat cumque impedit iusto vitae dolorum. Nostrum,
+									fugit!</span
+								>
+							</div>
+						</div>
+					</div>
+
+					<div class="mt-4 flex">
+						<div>
+							<div class="flex items-center h-16 border-l-4 border-blue-600">
+								<span class="text-4xl text-blue-600 px-4">Q.</span>
+							</div>
+							<div class="flex items-center h-16 border-l-4 border-gray-400">
+								<span class="text-4xl text-gray-400 px-4">A.</span>
+							</div>
+						</div>
+						<div>
+							<div class="flex items-center h-16">
+								<span class="text-lg text-blue-600 font-bold"
+									>Consectetur adipisicing elit?</span
+								>
+							</div>
+							<div class="flex items-center py-2">
+								<span class="text-gray-500"
+									>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Quae, dignissimos. Neque eos, dignissimos provident reiciendis
+									debitis repudiandae commodi perferendis et itaque, similique
+									fugiat cumque impedit iusto vitae dolorum. Nostrum,
+									fugit!</span
+								>
+							</div>
+						</div>
+					</div>
+
+					<div class="mt-4 flex">
+						<div>
+							<div class="flex items-center h-16 border-l-4 border-blue-600">
+								<span class="text-4xl text-blue-600 px-4">Q.</span>
+							</div>
+							<div class="flex items-center h-16 border-l-4 border-gray-400">
+								<span class="text-4xl text-gray-400 px-4">A.</span>
+							</div>
+						</div>
+						<div>
+							<div class="flex items-center h-16">
+								<span class="text-lg text-blue-600 font-bold"
+									>Neque eos, dignissimos provident reiciendis debitis?</span
+								>
+							</div>
+							<div class="flex items-center py-2">
+								<span class="text-gray-500"
+									>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Quae, dignissimos. Neque eos, dignissimos provident reiciendis
+									debitis repudiandae commodi perferendis et itaque, similique
+									fugiat cumque impedit iusto vitae dolorum. Nostrum,
+									fugit!</span
+								>
+							</div>
+						</div>
+					</div>
+
+					<div class="mt-4 flex">
+						<div>
+							<div class="flex items-center h-16 border-l-4 border-blue-600">
+								<span class="text-4xl text-blue-600 px-4">Q.</span>
+							</div>
+							<div class="flex items-center h-16 border-l-4 border-gray-400">
+								<span class="text-4xl text-gray-400 px-4">A.</span>
+							</div>
+						</div>
+						<div>
+							<div class="flex items-center h-16">
+								<span class="text-lg text-blue-600 font-bold"
+									>Repudiandae commodi perferendis et itaque?</span
+								>
+							</div>
+							<div class="flex items-center py-2">
+								<span class="text-gray-500"
+									>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Quae, dignissimos. Neque eos, dignissimos provident reiciendis
+									debitis repudiandae commodi perferendis et itaque, similique
+									fugiat cumque impedit iusto vitae dolorum. Nostrum,
+									fugit!</span
+								>
+							</div>
+						</div>
+					</div>
+
+					<div class="mt-4 flex">
+						<div>
+							<div class="flex items-center h-16 border-l-4 border-blue-600">
+								<span class="text-4xl text-blue-600 px-4">Q.</span>
+							</div>
+							<div class="flex items-center h-16 border-l-4 border-gray-400">
+								<span class="text-4xl text-gray-400 px-4">A.</span>
+							</div>
+						</div>
+						<div>
+							<div class="flex items-center h-16">
+								<span class="text-lg text-blue-600 font-bold"
+									>Similique fugiat cumque?</span
+								>
+							</div>
+							<div class="flex items-center py-2">
+								<span class="text-gray-500"
+									>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Quae, dignissimos. Neque eos, dignissimos provident reiciendis
+									debitis repudiandae commodi perferendis et itaque, similique
+									fugiat cumque impedit iusto vitae dolorum. Nostrum,
+									fugit!</span
+								>
+							</div>
+						</div>
+					</div>
+
+					<div class="mt-4 flex">
+						<div>
+							<div class="flex items-center h-16 border-l-4 border-blue-600">
+								<span class="text-4xl text-blue-600 px-4">Q.</span>
+							</div>
+							<div class="flex items-center h-16 border-l-4 border-gray-400">
+								<span class="text-4xl text-gray-400 px-4">A.</span>
+							</div>
+						</div>
+						<div>
+							<div class="flex items-center h-16">
+								<span class="text-lg text-blue-600 font-bold"
+									>Impedit iusto vitae dolorum, nostrum fugit?</span
+								>
+							</div>
+							<div class="flex items-center py-2">
+								<span class="text-gray-500"
+									>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Quae, dignissimos. Neque eos, dignissimos provident reiciendis
+									debitis repudiandae commodi perferendis et itaque, similique
+									fugiat cumque impedit iusto vitae dolorum. Nostrum,
+									fugit!</span
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			// Уникальные переводы для этой страницы
+			const translations_faq = {
+				en: {
+					pageTitle: 'Frequently Asked Questions',
+					pageContent:
+						'Here you will find answers to frequently asked questions from users',
+				},
+				ru: {
+					pageTitle: 'Часто задаваемые вопросы',
+					pageContent:
+						'Здесь вы найдете ответы на частые вопросы пользователей',
+				},
+			}
+
+			// Элементы, которые нужно перевести на этой странице
+			const pageSpecificElementsToTranslate = {
+				pageTitle: document.getElementById('pageTitle'),
+				pageContent: document.getElementById('pageContent'),
+			}
+
+			// Применение уникального перевода для этой страницы
+			function applyPageSpecificTranslations(language) {
+				if (translations_faq[language]) {
+					Object.keys(pageSpecificElementsToTranslate).forEach(key => {
+						if (pageSpecificElementsToTranslate[key]) {
+							pageSpecificElementsToTranslate[key].textContent =
+								translations_faq[language][key]
+						}
+					})
+				}
+			}
+		</script>
+
+<script>
+    function searchFAQ() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+        if (!searchTerm) return;
+
+        const questions = document.querySelectorAll('.flex.items-center.h-16 span.text-lg');
+
+        questions.forEach(question => {
+            const questionText = question.textContent.toLowerCase();
+            const parentDiv = question.closest('.mt-4.flex');
+            if (questionText.includes(searchTerm)) {
+                parentDiv.style.display = 'flex';
+                parentDiv.style.transition = 'opacity 0.5s ease-in-out';
+                parentDiv.style.opacity = 1;
+            } else {
+                parentDiv.style.transition = 'opacity 0.5s ease-in-out';
+                parentDiv.style.opacity = 0;
+                setTimeout(() => {
+                    parentDiv.style.display = 'none';
+                }, 500);
+            }
         });
-      }
     }
-  </script>
+
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+            searchFAQ();
+        }
+    }
+
+    function resetSearch() {
+        const questions = document.querySelectorAll('.mt-4.flex');
+        questions.forEach(question => {
+            question.style.display = 'flex';
+            question.style.opacity = 1;
+        });
+        document.getElementById('searchInput').value = '';
+    }
+</script>
+
 	</body>
 </html>
